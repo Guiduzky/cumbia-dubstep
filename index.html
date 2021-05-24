@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>JS</title>
+	<title>Cumbia Dubstep</title>
+	<script>
+
+		let root = document.querySelector(':root');
+
+		function cumbiaDubstepFunction() {
+			root.style.setProperty('--cumbia', 'visible');
+		}
+	</script>
 </head>
 <body>
 	<button onclick="cumbiaDubstepFunction()">Cumbia Dubstep?</button>
-	<script>
-		function cumbiaDubstepFunction() {
-			alert("Cumbia Dubstep");
-		}
-	</script>
+	<video class="dubstepVideo" src="video/Cumbia_Dubstep.mp4" controls autoplay loop>Lo sentimos. Cumbia Dubstep no puede reproducirse en su navegador.</video>
 </body>
 </html>
