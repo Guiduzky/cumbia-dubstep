@@ -12,7 +12,9 @@ body {
 
 #cumbia-button {
 	align-self: center; /* Centramos el cumbia-button (por alguna razón se descentra si cambias el height) */
-	height: 10%; /* Cambiamos el tamaño vertical */
+	font-size: 300%; /* Aumentamos el tamaño de la fuente */
+	height: 15%; /* Cambiamos el tamaño vertical */
+	width: 50%; /* Cambiamos el tamaó horizontal */
 }
 
 #dubstep-video {
