@@ -1,0 +1,20 @@
+html {
+	height: 100%; /* Forzamos a que la pagina ocupe toda la pantalla */
+}
+
+body {
+	min-height: 100%; /* Forzamos a que body ocupe toda la pantalla */
+	display: flex;
+	justify-content: center; /* Centramos el cumbia-button y el dubstep-video horizontalmente */
+	align-content: center; /* Centramos el cumbia-button y el dubstep-video verticalmente */
+	margin:  0px; /* Quitamos el margen por defecto */
+}
+
+#cumbia-button {
+	align-self: center; /* Centramos el cumbia-button (por alguna razón se descentra si cambias el height) */
+	height: 10%; /* Cambiamos el tamaño vertical */
+}
+
+#dubstep-video {
+	width: 100%; /* Hacemos que el dubstep-video ocupe toda la pantalla */
+}
