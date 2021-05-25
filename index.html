@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title>Cumbia Dubstep</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script></head>
+<body>
+    <!-- Boton activador de la función de Cumbia Dubstep -->
+	<button onclick="cumbiaDubstepFunction()" type="button">Cumbia Dubstep?</button>
+	<!-- Video Cumbia Dubstep -->
+	<video id="dubstep-video" src="video/Cumbia_Dubstep.mp4" loop>Lo sentimos. Cumbia Dubstep no puede reproducirse en su navegador.</video>
 	<script>
+        $("#dubstep-video").hide();  //Ocultamos el video de Cumbia Dubstep
 
-		let root = document.querySelector(':root');
+        let vid = document.getElementById("dubstep-video");   //Definimos la variable vid como el video de Cumbia Dubstep
 
-		function cumbiaDubstepFunction() {
-			root.style.setProperty('--cumbia', 'visible');
+		function cumbiaDubstepFunction() {  //Función activada por el botón de Cumbia Dubstep
+			$("#dubstep-video").show();  //Se muestra el video de Cumbia Dubstep
+			vid.play();  //Se inicia el video de Cumbia Dubstep
 		}
 	</script>
-</head>
-<body>
-	<button onclick="cumbiaDubstepFunction()">Cumbia Dubstep?</button>
-	<video class="dubstepVideo" src="video/Cumbia_Dubstep.mp4" controls autoplay loop>Lo sentimos. Cumbia Dubstep no puede reproducirse en su navegador.</video>
 </body>
 </html>
