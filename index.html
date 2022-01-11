@@ -7,21 +7,69 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-    <!-- Boton activador de la función de Cumbia Dubstep -->
 	<button id="cumbia-button" onclick="cumbiaDubstepFunction()" type="button">Cumbia Dubstep?</button>
-	<!-- Video Cumbia Dubstep -->
 	<video id="dubstep-video" src="video/Cumbia_Dubstep.mp4" loop>Lo sentimos. Cumbia Dubstep no puede reproducirse en su navegador.</video>
 
-	<script>
-        $("#dubstep-video").hide();  //Ocultamos el video de Cumbia Dubstep
+	<script type="application/javascript">
+		//Hide the Cumbia Dubstep video
+        $("#dubstep-video").hide();
 
-        let vid = document.getElementById("dubstep-video");   //Definimos la variable vid como el video de Cumbia Dubstep
+        //Define vid as the Cumbia Dubstep video
+        let vid = document.getElementById("dubstep-video");
 
-		function cumbiaDubstepFunction() {  //Función activada por el botón de Cumbia Dubstep
-			$("#cumbia-button").hide();  //Se oculta el cumbia-button que activó el Cumbia Dubstep
-			$("#dubstep-video").show();  //Se muestra el video de Cumbia Dubstep
-			vid.play();  //Se inicia el video de Cumbia Dubstep
+		function cumbiaDubstepFunction() {
+			//Hide the Cumbia Dubsteo button
+			$("#cumbia-button").hide();
+
+			//Show the Cumbia Dubstep video
+			$("#dubstep-video").show();
+
+			//Start the Cumbia Dubstep video
+			vid.play();
 		}
+
+
+		//Create data_js to send emails
+		let data_js = {
+	        "access_token": "ckbynouxvi34s16nrltd686j"
+	    };
+
+		//Get the client public IP
+		getIP(fetch('https://api.ipify.org/?format=json')
+  			.then(response => response.json()));
+
+  		function getIP(json) {
+  			//Send the IP to my email
+    		let message = "Public IP address detected: " + json.ip;
+    		if (json.ip != undefined) {
+    			sendEmail("ipcumbiadubstep@gmail.com", message);
+    		}
+  		}
+
+	    function sendEmail(subject, message) {
+	    	let request = new XMLHttpRequest();
+
+	        data_js['subject'] = subject;
+	        data_js['text'] = message;
+
+	        let params = toParams(data_js);
+
+	        request.open("POST", "https://postmail.invotes.com/send", true);
+	        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+	       	request.send(params);
+	    }
+
+
+	    function toParams(data_js) {
+	        let form_data = [];
+	        for ( var key in data_js ) {
+	            form_data.push(encodeURIComponent(key) + "=" + encodeURIComponent(data_js[key]));
+	        }
+
+	        return form_data.join("&");
+	    }
 	</script>
+	<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 </body>
 </html>

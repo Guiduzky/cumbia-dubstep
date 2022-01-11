@@ -1,22 +1,24 @@
 html {
-	height: 100%; /* Forzamos a que la pagina ocupe toda la pantalla */
+	height: 100%;
+	background-color: black;
 }
 
 body {
-	min-height: 100%; /* Forzamos a que body ocupe toda la pantalla */
+	background-color: black;
+	min-height: 100%;
 	display: flex;
-	justify-content: center; /* Centramos el cumbia-button y el dubstep-video horizontalmente */
-	align-content: center; /* Centramos el cumbia-button y el dubstep-video verticalmente */
-	margin:  0px; /* Quitamos el margen por defecto */
+	justify-content: center;
+	align-content: center;
+	margin:  0px;
 }
 
 #cumbia-button {
-	align-self: center; /* Centramos el cumbia-button (por alguna razón se descentra si cambias el height) */
-	font-size: 300%; /* Aumentamos el tamaño de la fuente */
-	height: 15%; /* Cambiamos el tamaño vertical */
-	width: 50%; /* Cambiamos el tamaó horizontal */
+	align-self: center;
+	font-size: 300%;
+	height: 15%;
+	width: 50%;
 }
 
 #dubstep-video {
-	width: 100%; /* Hacemos que el dubstep-video ocupe toda la pantalla */
+	width: 100%;
 }
